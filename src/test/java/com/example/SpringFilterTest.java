@@ -54,7 +54,7 @@ public class SpringFilterTest {
 
         @Override
         protected boolean shouldNotFilter(HttpServletRequest request) {
-            return skipUrls.stream().anyMatch(p -> pathMatcher.match(p, request.getServletPath()));
+            return skipUrls.stream().anyMatch(p -> pathMatcher.match(p, request.getRequestURI()));
         }
     }
 
